@@ -1,0 +1,250 @@
+@import url('https://googleapis.com');
+
+/* LIENZO GENERAL CON REFLEJOS DE ESTADIO */
+.login-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #050612;
+    background-image: 
+        radial-gradient(circle at 20% 25%, rgba(24, 27, 207, 0.45) 0%, transparent 50%),
+        radial-gradient(circle at 80% 75%, rgba(204, 24, 24, 0.45) 0%, transparent 50%),
+        linear-gradient(180deg, #03040b 0%, #080a1c 100%);
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Fondo discreto de estrellas fijas */
+.login-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(1.5px 1.5px at 30px 40px, #ffffff, transparent),
+        radial-gradient(2px 2px at 80px 150px, rgba(255, 255, 255, 0.6), transparent),
+        radial-gradient(1px 1px at 190px 70px, #ffffff, transparent);
+    background-size: 250px 250px;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+/* BOTÓN DE RETORNO FLOTANTE */
+.btn-back-home {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.btn-back-home:hover {
+    color: #ffffff;
+    border-color: #181bcf;
+    box-shadow: 0 0 15px rgba(24, 27, 207, 0.3);
+    transform: translateX(-3px);
+}
+
+/* CAJA DE LOGEO (GLASSMORPHISM) */
+.login-box {
+    background: rgba(11, 14, 38, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 28px;
+    padding: 45px 40px;
+    max-width: 460px;
+    width: 100%;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6), 0 0 50px rgba(24, 27, 207, 0.15);
+    position: relative;
+    z-index: 5;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Detalle superior neón */
+.login-box::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 20%; right: 20%; height: 3px;
+    background: linear-gradient(90deg, transparent, #181bcf, #cc1818, transparent);
+}
+
+.login-box h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ffffff 40%, #c7d2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login-box p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin: 0 0 35px 0;
+    line-height: 1.5;
+}
+
+/* ENTRADAS DE DATOS */
+.input-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+    text-align: left;
+    position: relative;
+}
+
+.input-field label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #cbd5e1;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.input-field input {
+    background: rgba(5, 6, 18, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 14px 16px;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* Iluminación de foco al escribir (Azul oficial) */
+.input-field input:focus {
+    border-color: #181bcf;
+    box-shadow: 0 0 15px rgba(24, 27, 207, 0.4);
+    background: rgba(5, 6, 18, 0.85);
+}
+
+/* CONTENEDOR DE CONTRASEÑA OCULTABLE */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.toggle-password-btn {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px;
+    outline: none;
+}
+
+.toggle-password-btn:hover {
+    color: #ffffff;
+}
+
+/* OPCIONES COMPLEMENTARIAS (CHECKBOX Y LINK) */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 13px;
+}
+
+.remember-me {
+    color: #cbd5e1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.remember-me input {
+    accent-color: #181bcf;
+    cursor: pointer;
+}
+
+.forgot-link {
+    color: #cc1818; /* Enlace en rojo mundialista */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.forgot-link:hover {
+    color: #ff4d4d;
+    text-decoration: underline;
+}
+
+/* BOTÓN DE INGRESO DUAL */
+.btn-submit {
+    width: 100%;
+    background: linear-gradient(90deg, #181bcf, #cc1818, #181bcf);
+    background-size: 200% auto;
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Space Grotesk', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.btn-submit:hover {
+    background-position: right center; /* Cambia dinámicamente de azul a rojo */
+    box-shadow: 0 5px 20px rgba(204, 24, 24, 0.4);
+    transform: translateY(-2px);
+}
+
+.register-redirect {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 20px 0 0 0;
+}
+
+.register-redirect a {
+    color: #181bcf;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-redirect a:hover {
+    text-decoration: underline;
+}
+
+/* ESTADOS DE ERROR POR SCRIPT */
+.input-field.invalid input {
+    border-color: #cc1818;
+    background: rgba(204, 24, 24, 0.05);
+}
+
+.error-msg {
+    color: #cc1818;
+    font-size: 11px;
+    margin-top: 4px;
+    font-weight: 600;
+    display: block;
+}

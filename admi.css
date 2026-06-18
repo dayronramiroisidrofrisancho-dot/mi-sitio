@@ -1,0 +1,221 @@
+/* ==========================================================================
+   ESTILO PROFESIONAL - ENFOQUE PURO AZUL DEPORTIVO & ROJO PASIÓN
+   ========================================================================== */
+
+/* Configuración General y Fondo de Contraste */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #334155;
+    background-color: #110480;
+    background-color: #061175;
+}
+
+/* Contenedor de la Tarjeta */
+.login-container {
+    width: 100%;
+    max-width: 440px;
+    padding: 24px;
+}
+
+/* Tarjeta de Acceso Estilizada */
+.login-card {
+    background-color: #d30505;
+    padding: 45px 35px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+    border-top: 6px solid #ef4444;    /* Línea de acento Roja superior */
+    border-bottom: 6px solid #1e40af; /* Línea de acento Azul inferior */
+    position: relative;
+}
+
+/* Encabezado */
+.login-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.admin-icon {
+    font-size: 2.2rem;
+    display: inline-block;
+    margin-bottom: 12px;
+    background: #eff6ff;
+    padding: 12px;
+    border-radius: 50%;
+    color: #1e40af; /* Icono Azul */
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(30, 64, 175, 0.1);
+}
+
+.login-header h2 {
+    color: #1e40af; /* Título Azul Deportivo */
+    font-size: 1.65rem;
+    margin: 0 0 8px 0;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.login-header p {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Elementos del Formulario */
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #1e40af; /* Texto de etiquetas en Azul */
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+/* Campos de entrada de datos con iconos */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 14px;
+    font-size: 1.1rem;
+    color: #94a3b8;
+    transition: color 0.3s ease;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 14px 14px 14px 44px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #0f172a;
+    background-color: #f8fafc;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Enfoque e interacción en Azul */
+.input-wrapper input:focus {
+    border-color: #1e40af;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.15);
+}
+
+.input-wrapper input:focus + .input-icon {
+    color: #1e40af;
+}
+
+/* Enlaces Opciones */
+.form-options {
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.forgot-link {
+    font-size: 0.85rem;
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.forgot-link:hover {
+    color: #ef4444; /* Cambio a Rojo en Hover */
+    text-decoration: underline;
+}
+
+/* Botón del Panel - Color Rojo con Sombra Activa */
+.btn-admin-login {
+    width: 100%;
+    padding: 15px;
+    background-color: #ef4444; /* Botón Rojo */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(239, 68, 68, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-admin-login:hover {
+    background-color: #dc2626; /* Rojo más intenso al pasar el cursor */
+    box-shadow: 0 6px 22px rgba(220, 38, 38, 0.45);
+    transform: translateY(-1px);
+}
+
+.btn-admin-login:active {
+    transform: translateY(1px);
+}
+
+/* Alertas Dinámicas de JavaScript */
+.alerta-oculta {
+    display: none;
+}
+
+.alerta-exito, .alerta-error {
+    display: block;
+    padding: 14px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: 600;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.alerta-exito {
+    background-color: #0b0edb;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.alerta-error {
+    background-color: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+/* Enlace inferior de regreso */
+.login-footer {
+    margin-top: 30px;
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 22px;
+}
+
+.btn-back-home {
+    font-size: 0.9rem;
+    color: #1e40af; /* Enlace Azul */
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.btn-back-home:hover {
+    color: #ef4444; /* Cambio a Rojo en Hover */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}

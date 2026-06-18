@@ -1,0 +1,124 @@
+
+<a href="index.html" class="btn-back-home">Volver</a>
+<script src="fut.js">
+
+</script>
+<link rel="stylesheet" href="REGISTRARSE.CSS">
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Oficial - Mundial 2026</title>
+    <link rel="stylesheet" href="REGISTRARSE.CSS">
+    <script src="fut.js" defer></script>
+</head>
+<body>
+
+    <!-- BOTÓN REGRESAR AL INICIO -->
+
+
+    <section id="registro-torneo" class="form-section">
+        <div class="form-box">
+            <h2>regístrate</h2>
+            <p>Para que estés al pendiente de todos los partidos del mundial</p>
+            
+            <form action="#" method="POST" novalidate>
+                
+                <!-- FILA: NOMBRE Y APELLIDO -->
+                <div class="form-row-grid">
+                    <div class="input-field">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" placeholder="Ej. Juan" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" placeholder="Ej. Pérez" required>
+                    </div>
+                </div>
+
+                <!-- CAMPO: TELÉFONO -->
+                <div class="input-field">
+                    <label for="telefono">Número Telefónico</label>
+                    <input type="tel" id="telefono" placeholder="Ej. 987654321" required>
+                </div>
+
+                <!-- CAMPO: CORREO -->
+                <div class="input-field">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" id="correo" placeholder="juan@ejemplo.com" required>
+                </div>
+
+                <!-- CAMPO: EDAD -->
+                <div class="input-field">
+                    <label for="edad">Edad</label>
+                    <input type="number" id="edad" min="12" max="99" placeholder="Mínimo 12 años" required>
+                </div>
+
+                <!-- SELECCIÓN DE PLAN PREMIUM -->
+                <div class="plan-selection-container">
+                    <label class="section-label">Elige tu nivel de acceso:</label>
+                    <div class="plan-cards-grid">
+                        
+                        <!-- Tarjeta Plan Estándar -->
+                        <label class="plan-card">
+                            <input type="radio" name="tipo_plan" value="estandar" checked>
+                            <div class="plan-card-content">
+                                <span class="plan-badge-type">BÁSICO</span>
+                                <h3>Pase Estándar</h3>
+                                <p class="plan-price">Gratis</p>
+                                <ul class="plan-features">
+                                    <li>✓ Predicciones básicas</li>
+                                    <li>✓ Soporte por correo</li>
+                                </ul>
+                            </div>
+                        </label>
+
+                        <!-- Tarjeta Plan Premium -->
+                        <label class="plan-card premium-highlight">
+                            <input type="radio" name="tipo_plan" value="premium">
+                            <div class="plan-card-content">
+                                <span class="plan-badge-promo">¡30 DÍAS GRATIS!</span>
+                                <h3>Pase Premium 👑</h3>
+                                <p class="plan-price">$4.99<span>/mes</span></p>
+                                <ul class="plan-features">
+                                    <li>★ Quinielas ilimitadas</li>
+                                    <li>★ Alertas SMS en tiempo real</li>
+                                    <li>★ Sorteo de playeras</li>
+                                </ul>
+                            </div>
+                        </label>
+
+                    </div>
+                </div>
+
+                <!-- PASARELA DE PAGO COLOZADA -->
+                <div id="seccion-pago" class="payment-checkout-box">
+                    <h4>Método de Pago Seguro (Prueba Gratuita)</h4>
+                    <p class="payment-note">Se requiere tarjeta para validar la identidad. Cargo de $0.00 hoy. Su prueba de 30 días inicia ahora.</p>
+                    
+                    <div class="input-field">
+                        <label for="card-number">Número de Tarjeta</label>
+                        <input type="text" id="card-number" placeholder="4532 4582 1245 9632" maxlength="19">
+                    </div>
+
+                    <div class="form-row-grid">
+                        <div class="input-field">
+                            <label for="card-date">Vencimiento</label>
+                            <input type="text" id="card-date" placeholder="MM/AA" maxlength="5">
+                        </div>
+                        <div class="input-field">
+                            <label for="card-cvv">CVV</label>
+                            <input type="password" id="card-cvv" placeholder="123" maxlength="3">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar Inscripción</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>

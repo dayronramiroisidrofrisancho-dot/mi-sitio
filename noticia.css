@@ -1,0 +1,235 @@
+/* Fondo general para toda la hoja de la página */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #181bcf 0%, #0c0d5e 40%, #11031c 70%, #cc1818 100%);
+    background-attachment: fixed; /* Mantiene el fondo quieto mientras bajas por la página */
+    color: #ffffff; /* Cambia el texto general a blanco para que sea legible */
+}
+
+/* Ajuste para las tarjetas de noticias individuales */
+.news-card {
+    background: #ffffff; /* Regresa a fondo blanco */
+}
+
+/* Estilos para la Sección de Noticias */
+.news-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.news-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* TÍTULO DE LA PÁGINA: Cambiado a Blanco */
+.news-header h2 {
+    font-size: 32px;
+    color: #ffffff; 
+    margin-bottom: 10px;
+}
+
+/* SUBTÍTULO DE LA PÁGINA: Cambiado a Negro */
+.news-header p {
+    color: #cc1010;
+    font-size: 16px;
+    font-weight: 500; /* Un poco más grueso para que se lea bien sobre el fondo */
+}
+
+/* Rejilla Responsiva (Grid) */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* ARREGLO EXCLUSIVO PARA LA NOTICIA PRINCIPAL (MÉXICO) */
+@media (min-width: 900px) {
+    .featured-news {
+        grid-column: span 2;
+        display: flex;
+        flex-direction: column; /* Cambia la dirección a vertical (Foto arriba, texto abajo) */
+    }
+    .featured-news .news-image {
+        width: 100%; /* La foto se expande para llenar todo el ancho del recuadro blanco */
+        height: 900px; /* Altura ideal y destacada para la foto principal */
+        object-fit: cover;
+    }
+    .featured-news .news-content {
+        width: 90%; /* La descripción ocupa el 100% de la parte inferior */
+    }
+}
+
+/* Banner publicitario de gran tamaño */
+.news-football-ad-large {
+    margin-top: auto; /* Absorbe de forma gigante todo el espacio libre */
+    margin-bottom: 20px;
+    padding: 24px 16px; /* Aumenta el espacio interno para que se vea imponente */
+    background: linear-gradient(180deg, #11031c 0%, #cc1818 100%); /* Degradado a juego con tu fondo general */
+    border: 3px solid #ffd700; /* Borde dorado grueso de alta atención */
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+/* Etiqueta superior del banner */
+.news-football-ad-large .ad-badge-large {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffd700;
+    color: #11031c;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 3px 14px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+/* Emojis gigantes */
+.news-football-ad-large .ad-main-emoji {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Título de introducción */
+.news-football-ad-large h4 {
+    margin: 0;
+    color: #00ff87; /* Verde neón deportivo */
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+/* Texto de oferta principal destacado */
+.news-football-ad-large h3 {
+    margin: 6px 0 10px 0 !important;
+    color: #ffffff !important;
+    font-size: 26px !important; /* Letras muy grandes */
+    font-weight: 900 !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Párrafo explicativo del anuncio */
+.news-football-ad-large p {
+    margin: 0 0 16px 0 ;
+    color: #f1f5f9 ;
+    font-size: 13px ;
+    line-height: 1.4 ;
+}
+
+/* Botón de acción gigante */
+.news-football-ad-large .ad-button-large {
+    display: block;
+    background: #00ff87; /* Botón verde brillante */
+    color: #0c0d5e;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 12px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s ease, background 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 255, 135, 0.3);
+}
+
+.news-football-ad-large .ad-button-large:hover {
+    background: #ffd700; /* Cambia a dorado al pasar el mouse */
+    transform: scale(1.03); /* Ligero efecto de expansión */
+}
+
+
+/* Tarjetas de Noticias individuales */
+.news-card {
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(20, 27, 207, 0.15);
+}
+
+/* ESTADO ORIGINAL: Estilos de imagen para las tarjetas normales */
+.news-image {
+    width: 100%;
+    height: 200px; /* Se mantiene en los 200px originales que tenías */
+    object-fit: cover; /* Ajusta la imagen proporcionalmente */
+    display: block;
+}
+
+.news-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Etiquetas */
+.news-tag {
+    align-self: flex-start;
+    background: #e2e8f0;
+    color: #475569;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.news-tag.tag-live { background: #00ff87; color: #0a0b1e; }
+.news-tag.tag-alert { background: #ef4444; color: #ffffff; }
+
+/* Título de la noticia (se mantiene el original) */
+.news-content h3 {
+    margin: 0 0 12px 0;
+    font-size: 20px;
+    color: #1e293b;
+    line-height: 1.4;
+}
+
+/* Descripción de la noticia (se mantiene el original) */
+.news-content p {
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+}
+
+/* Pie de la tarjeta */
+.news-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 14px;
+}
+
+.news-date {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.news-link {
+    color: #181bcf;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.news-link:hover {
+    text-decoration: underline;
+}

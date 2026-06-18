@@ -1,0 +1,41 @@
+
+
+
+<link rel="stylesheet" href="admi.css">
+<link rel="stylesheet" href="admi.js">
+<!-- Busca esta línea en tu index.html y actualízala así -->
+
+
+<form id="form-admin" class="login-form">
+    
+    <!-- Contenedor para mensajes de error o éxito -->
+    <div id="mensaje-alerta" class="alerta-oculta"></div>
+
+    <!-- Campo: Usuario / Correo -->
+    <div class="form-group">
+        <label for="admin-user">Usuario Administrativo</label>
+        <div class="input-wrapper">
+            <span class="input-icon">👤</span>
+            <input type="text" id="admin-user" placeholder="admin2026" required autocomplete="username">
+        </div>
+    </div>
+
+    <!-- Campo: Contraseña -->
+    <div class="form-group">
+        <label for="admin-password">Contraseña de Seguridad</label>
+        <div class="input-wrapper">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="admin-password" placeholder="••••••••" required autocomplete="current-password">
+        </div>
+    </div>
+
+    <div class="form-options">
+        <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+    </div>
+
+    <!-- Botón de Ingreso -->
+    <button type="submit" class="btn-admin-login">Ingresar al Sistema</button>
+</form>
+
+<!-- Enlace al archivo JavaScript antes de cerrar el body -->
+<script src="admin-login.js"></script>

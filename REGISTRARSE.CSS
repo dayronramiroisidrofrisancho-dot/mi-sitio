@@ -1,0 +1,225 @@
+
+
+
+
+
+/* ==========================================
+   BOTÓN FLOTANTE REGRESAR AL MENÚ
+   ========================================== */
+.btn-back-home {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    background-color: #56042c; /* Color guinda oficial */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efecto al pasar el mouse por encima */
+.btn-back-home:hover {
+    background-color: #7b063f; /* Tono de guinda más claro */
+    transform: translateY(-5px); /* Pequeño salto hacia arriba */
+    box-shadow: 0 6px 15px rgba(86, 4, 44, 0.4);
+}
+
+/* Efecto visual suave de scroll en toda la página */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ajuste opcional para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .btn-volver {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+/* LIENZO GENERAL Y LUCES DE ESTADIO */
+.form-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #050612;
+    background-image: 
+        radial-gradient(circle at 15% 20%, rgba(24, 27, 207, 0.45) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(204, 24, 24, 0.45) 0%, transparent 50%),
+        linear-gradient(180deg, #03040b 0%, #080a1c 100%);
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Fondo de estrellas discretas */
+.form-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(1.5px 1.5px at 20px 30px, #ffffff, transparent),
+        radial-gradient(2px 2px at 60px 120px, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 150px 40px, #ffffff, transparent),
+        radial-gradient(2.5px 2.5px at 250px 200px, #ffffff, transparent);
+    background-size: 300px 300px;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+/* CAJA CONTENEDORA (CRISTAL) */
+.form-box {
+    background: rgba(11, 14, 38, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 28px;
+    padding: 40px 35px;
+    max-width: 540px;
+    width: 100%;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6), 0 0 50px rgba(24, 27, 207, 0.15);
+    position: relative;
+    z-index: 5;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Línea neón superior */
+.form-box::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 15%; right: 15%; height: 3px;
+    background: linear-gradient(90deg, transparent, #181bcf, #cc1818, transparent);
+}
+
+.form-box h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ffffff 40%, #c7d2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.form-box p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin: 0 0 30px 0;
+}
+
+/* CAMPOS DE ENTRADA */
+.input-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+    text-align: left;
+    position: relative;
+}
+
+.input-field label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #cbd5e1;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.input-field input {
+    background: rgba(5, 6, 18, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 13px 16px;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* Enfoque dinámico */
+.input-field input:focus {
+    border-color: #181bcf;
+    box-shadow: 0 0 15px rgba(24, 27, 207, 0.4);
+    background: rgba(5, 6, 18, 0.85);
+}
+
+/* Contenedores de error dinámicos */
+.input-field.invalid input { border-color: #cc1818; background: rgba(204, 24, 24, 0.05); }
+.error-msg { color: #cc1818; font-size: 11px; margin-top: 4px; font-weight: 600; display: none; }
+.input-field.invalid .error-msg { display: block; }
+
+/* REJILLA EN FILAS */
+.form-row-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* SELECCIÓN DE PLANES */
+.plan-selection-container { margin: 25px 0 20px 0; text-align: left; }
+.section-label { font-size: 12px; font-weight: 700; color: #ffffff; text-transform: uppercase; margin-bottom: 10px; display: block; }
+.plan-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.plan-card { cursor: pointer; position: relative; }
+.plan-card input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+.plan-card-content {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 18px 15px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.plan-card input[type="radio"]:checked + .plan-card-content {
+    border-color: #181bcf; background: rgba(24, 27, 207, 0.1);
+    box-shadow: 0 10px 20px rgba(24, 27, 207, 0.2);
+    transform: translateY(-2px);
+}
+.premium-highlight input[type="radio"]:checked + .plan-card-content {
+    border-color: #cc1818; background: rgba(204, 24, 24, 0.1);
+    box-shadow: 0 10px 20px rgba(204, 24, 24, 0.2);
+}
+
+.plan-card-content h3 { margin: 8px 0 4px 0; font-size: 15px; color: #ffffff; }
+.plan-price { font-size: 22px; font-weight: 800; color: #181bcf; margin: 0 0 10px 0; }
+.premium-highlight .plan-price { color: #cc1818; }
+.plan-price span { font-size: 11px; color: #94a3b8; }
+.plan-features { list-style: none; padding: 0; margin: 0; font-size: 11px; color: #cbd5e1; line-height: 1.6; }
+.plan-badge-type { background: rgba(255, 255, 255, 0.06); color: #94a3b8; font-size: 9px; font-weight: 700; padding: 3px 8px; border-radius: 6px; align-self: flex-start; }
+.plan-badge-promo { background: #cc1818; color: #ffffff; font-size: 9px; font-weight: 700; padding: 3px 8px; border-radius: 6px; align-self: flex-start; }
+
+/* PASARELA DE PAGO */
+.payment-checkout-box { max-height: 0; overflow: hidden; opacity: 0; background: rgba(4, 5, 14, 0.6); border-radius: 16px; padding: 0 20px; transition: all 0.4s ease; }
+.payment-checkout-box.show { max-height: 400px; opacity: 1; padding: 20px; margin: 20px 0; border: 1px solid rgba(204, 24, 24, 0.3); }
+.payment-checkout-box h4 { margin: 0 0 4px 0; color: #ffffff; font-size: 15px; text-align: left; }
+.payment-note { font-size: 11px; color: #94a3b8; margin: 0 0 12px 0; text-align: left; }
+.payment-checkout-box input:focus { border-color: #cc1818; box-shadow: 0 0 15px rgba(204, 24, 24, 0.4); }
+
+/* BOTÓN ENVIAR */
+.btn-submit {
+    width: 100%; background: linear-gradient(90deg, #181bcf, #cc1818, #181bcf); background-size: 200% auto;
+    color: #ffffff; border: none; padding: 15px; font-size: 15px; font-weight: 700; font-family: 'Space Grotesk', sans-serif;
+    text-transform: uppercase; letter-spacing: 1px; border-radius: 12px; cursor: pointer; transition: all 0.4s ease; margin-top: 10px;
+}
+.btn-submit:hover { background-position: right center; box-shadow: 0 5px 20px rgba(204, 24, 24, 0.4); transform: translateY(-2px); }
